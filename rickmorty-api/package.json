@@ -1,12 +1,39 @@
 {
   "name": "rickmorty-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "- GraphQL endpoint: /graphql\r - Database: PostgreSQL (migrations with Sequelize)\r - Cache: Redis\r - Seed: loads 15 initial characters from the public API",
+  "dependencies": {
+    "@types/express": "^4.17.25",
+    "apollo-server-express": "^3.13.0",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "graphql": "^16.12.0",
+    "graphql-tag": "^2.12.6",
+    "node-fetch": "^2.7.0",
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4",
+    "redis": "^5.9.0",
+    "reflect-metadata": "^0.2.2",
+    "sequelize": "^6.37.7",
+    "sequelize-typescript": "^2.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/node-fetch": "^2.6.13",
+    "@types/redis": "^4.0.11",
+    "sequelize-cli": "^6.6.3",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.3"
+  }
 }
