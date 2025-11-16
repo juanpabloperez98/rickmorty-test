@@ -10,3 +10,4 @@ coverage/
 .idea/ 
 .env.local 
 .sequelize/ 
+.env.docker

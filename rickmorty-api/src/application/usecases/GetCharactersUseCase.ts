@@ -25,7 +25,8 @@ export class GetCharactersUseCase {
     if (filter) {
       characters = characters.filter((c: any) => {
         return (
-          (!filter.name || c.name.toLowerCase().includes(filter.name.toLowerCase())) &&
+          (!filter.name ||
+            c.name.toLowerCase().includes(filter.name.toLowerCase())) &&
           (!filter.status || c.status === filter.status) &&
           (!filter.species || c.species === filter.species) &&
           (!filter.gender || c.gender === filter.gender) &&
@@ -39,5 +40,9 @@ export class GetCharactersUseCase {
     });
 
     return characters;
+  }
+
+  async executeCronSync(characterData: any) {
+    return this.repository.syncCharacter(characterData);
   }
 }
